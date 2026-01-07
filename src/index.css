@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 217 71% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 45 93% 47%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 217 71% 35%;
+
+    --radius: 0.5rem;
+
+    /* Custom Elektroshield tokens */
+    --electric-blue: 217 71% 35%;
+    --electric-blue-light: 217 60% 55%;
+    --electric-gold: 45 93% 47%;
+    --electric-navy: 220 40% 13%;
+    --electric-gray: 220 15% 60%;
+    --electric-light: 210 20% 98%;
+
+    --shadow-subtle: 0 2px 8px -2px hsl(220 25% 10% / 0.08);
+    --shadow-medium: 0 8px 24px -4px hsl(220 25% 10% / 0.12);
+    --shadow-elevated: 0 16px 48px -8px hsl(220 25% 10% / 0.15);
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 30% 14%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 30% 14%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 217 60% 55%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 20% 22%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 45 93% 47%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 217 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
